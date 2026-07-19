@@ -27,7 +27,9 @@ The board can run Meshcore or Meshtastic firmware. Both need power-saving patche
 | Width | 50.54 mm |
 | Height | 45.50 mm |
 
-Fits into this box: [Aliexpress, F-type, 63x58x35](https://de.aliexpress.com/item/1005005480970197.html)
+Fits into this box: [Aliexpress, F-type, 63x58x35](https://de.aliexpress.com/item/1005005480970197.html).
+
+Yes - the mounting hole is not symmetric. 
 
 ## Pinout
 
