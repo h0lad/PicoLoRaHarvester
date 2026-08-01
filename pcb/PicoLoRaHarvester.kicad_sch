@@ -3259,6 +3259,12 @@
 		(uuid "49a9ffed-6681-47ed-85e3-04e4cf67df94")
 	)
 	(junction
+		(at 36.83 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "91f04d59-ed9b-4046-a738-b10ef16937a8")
+	)
+	(junction
 		(at 278.13 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3411,6 +3417,16 @@
 			(type default)
 		)
 		(uuid "01c4f7f6-cac1-4264-b4a9-4f4e1f0815af")
+	)
+	(wire
+		(pts
+			(xy 29.21 96.52) (xy 26.67 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "020f2e84-702c-45d3-a219-dc74a80691ea")
 	)
 	(wire
 		(pts
@@ -3974,7 +3990,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 69.85) (xy 36.83 91.44)
+			(xy 36.83 69.85) (xy 36.83 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4211,6 +4227,16 @@
 			(type default)
 		)
 		(uuid "900ba296-244f-48e1-9f63-1c419faee7df")
+	)
+	(wire
+		(pts
+			(xy 36.83 96.52) (xy 36.83 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "904c056e-587b-4c1b-9f0f-87365ad7d6eb")
 	)
 	(wire
 		(pts
@@ -5023,7 +5049,7 @@
 		(uuid "64d13ddd-29ff-4d42-9992-2f50046bfbf5")
 	)
 	(label "VUSB"
-		(at 36.83 91.44 270)
+		(at 36.83 104.14 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7857,6 +7883,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 26.67 96.52 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46bf9901-8659-405b-8886-acaa7e1e0668")
+		(property "Reference" "#PWR019"
+			(at 20.32 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 21.59 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 26.67 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 26.67 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef3ca4a8-4c5d-42ab-94a3-0adac7461b5d")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 135.89 133.35 270)
 		(unit 1)
@@ -10616,6 +10720,87 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 33.02 96.52 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d712e1e3-c94c-4dce-82b5-bb7a597ed274")
+		(property "Reference" "C12"
+			(at 35.56 97.282 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 30.226 97.028 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 36.83 95.5548 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 33.02 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4f553439-b625-4e9f-971c-69ba5bd1a056")
+		)
+		(pin "1"
+			(uuid "989031e0-5ec8-452e-a022-27d0f8c1bfd7")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "C12")
 					(unit 1)
 				)
 			)
