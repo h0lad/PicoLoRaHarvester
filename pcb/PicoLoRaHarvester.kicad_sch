@@ -3975,8 +3975,8 @@
 					)
 				)
 			)
-			(property "Value" ""
-				(at 0 0 0)
+			(property "Value" "TPS63900"
+				(at 17.018 -11.176 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -4717,9 +4717,9 @@
 		)
 		(uuid "3359acb3-df9f-4a68-a32c-085405eb3eea")
 	)
-	(text "Safe default Boot:\nOVP=4.2V, LVD=3.2V\nLDO=3.0V, OCP=200mA\n\nWill be overwritten\nby I2C if needed\n\n3.0V after Boot"
+	(text "Safe default Boot:\nOVP=4.2V, LVD=2.2V\nLDO=Bypass, OCP=200mA\n\nWill be overwritten\nby I2C if needed\n\nThe STM32WL works \nfrom 2V-3.6V\n\nAfter boot we immediately \nset proper chemistry limits"
 		(exclude_from_sim no)
-		(at 25.908 34.036 0)
+		(at 25.4 28.702 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5623,7 +5623,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 87.63) (xy 72.39 107.95)
+			(xy 72.39 87.63) (xy 72.39 91.44)
 		)
 		(stroke
 			(width 0)
@@ -6383,7 +6383,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 87.63) (xy 67.31 97.79)
+			(xy 67.31 87.63) (xy 67.31 102.87)
 		)
 		(stroke
 			(width 0)
@@ -6633,7 +6633,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 87.63) (xy 69.85 102.87)
+			(xy 69.85 87.63) (xy 69.85 91.44)
 		)
 		(stroke
 			(width 0)
@@ -7111,6 +7111,16 @@
 		)
 		(uuid "99b00b00-9706-4426-adb5-6e2427375a6b")
 	)
+	(label "CSTORE"
+		(at 69.85 91.44 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "99be9a04-402e-4353-a282-b5ba5c8f5713")
+	)
 	(label "+3V0"
 		(at 128.27 125.73 180)
 		(effects
@@ -7230,6 +7240,16 @@
 			(justify right bottom)
 		)
 		(uuid "bcf8d9b4-205c-4f21-a052-6c8696858fff")
+	)
+	(label "CSTORE"
+		(at 72.39 91.44 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cb5d0012-c467-444f-b359-c421ea62571c")
 	)
 	(label "I2C1_SCL"
 		(at 143.51 149.86 0)
@@ -8027,7 +8047,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "08530692-37e3-49dc-bd34-a0b4d54a885f")
 		(property "Reference" "U3"
 			(at 139.3033 78.74 0)
@@ -8040,8 +8059,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" ""
-			(at 119.38 78.74 0)
+		(property "Value" "TPS63900"
+			(at 135.128 89.662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8050,7 +8069,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm"
+		(property "Footprint" "Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm_ThermalVias"
 			(at 119.38 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -9486,7 +9505,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 67.31 97.79 0)
+		(at 67.31 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9497,7 +9516,7 @@
 		(fields_autoplaced yes)
 		(uuid "27f46a8b-437f-4efa-8030-7f6f0bc9dcc4")
 		(property "Reference" "#PWR014"
-			(at 67.31 104.14 0)
+			(at 67.31 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9508,7 +9527,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 67.31 102.87 0)
+			(at 67.31 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9518,7 +9537,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 67.31 97.79 0)
+			(at 67.31 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9529,7 +9548,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 97.79 0)
+			(at 67.31 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9540,7 +9559,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 67.31 97.79 0)
+			(at 67.31 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11083,84 +11102,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 69.85 102.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "70577e6f-99f5-491c-8309-391dafc9c5c7")
-		(property "Reference" "#PWR016"
-			(at 69.85 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 69.85 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 69.85 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 69.85 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 69.85 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2424eacc-dd5a-4af6-bb1d-fdcaa505923a")
-		)
-		(instances
-			(project "PicoLoRaHarvester"
-				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 273.05 153.67 0)
 		(unit 1)
@@ -12173,84 +12114,6 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 72.39 107.95 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a656e154-7ba6-45aa-a2e0-6990d1680799")
-		(property "Reference" "#PWR012"
-			(at 72.39 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 72.39 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 72.39 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "49d4bdff-f83b-455a-8079-a04bac372835")
-		)
-		(instances
-			(project "PicoLoRaHarvester"
-				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
