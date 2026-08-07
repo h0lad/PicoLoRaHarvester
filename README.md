@@ -18,7 +18,7 @@ The board can run Meshcore or Meshtastic firmware. Both need power-saving patche
 * LiPo-safe PMIC hardware defaults: OVP=4.2 V, LVD=3.2 V, LDO=3.0 V, OCP=200 mA (overridable via I²C)
 * With a soldering bridge you can either go for the internal Nexperia NEF7100 LDO or use a TI TPS63900 Buck-Boost Converter. This is needed if you want to use exotic cells and need proper 3.3 V.
 * USB bypass charging (VUSB) at up to 200 mA via the UART connector
-* Battery (ADC_LIPO) and solar (ADC_VBUS) voltage monitoring via 1:1 resistor dividers
+* Battery (ADC_LIPO) and solar (ADC_VBUS) voltage monitoring via 1:1 resistor dividers, on/off switchable with a n-Mosfet.
 
 
 ## Physical Outlines
