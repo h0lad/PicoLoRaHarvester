@@ -16,9 +16,10 @@ The board can run Meshcore or Meshtastic firmware. Both need power-saving patche
 
 * Energy harvesting via Nexperia NEH7100 PMIC: 15 μW to 100 mW input range, up to 95% efficiency
 * LiPo-safe PMIC hardware defaults: OVP=4.2 V, LVD=3.2 V, LDO=3.0 V, OCP=200 mA (overridable via I²C)
-* The PMIC's LDO supplies the RAK3172 with 3.0 V
+* With a soldering bridge you can either go for the internal Nexperia NEF7100 LDO or use a TI TPS63900 Buck-Boost Converter. This is needed if you want to use exotic cells and need proper 3.3 V.
 * USB bypass charging (VUSB) at up to 200 mA via the UART connector
 * Battery (ADC_LIPO) and solar (ADC_VBUS) voltage monitoring via 1:1 resistor dividers
+
 
 ## Physical Outlines
 
