@@ -10,9 +10,11 @@ This PCB integrates a [RAK3172 LoRa module](https://docs.rakwireless.com/Product
 
 Main target are solar-powered LoRa nodes that run unattended in off-grid locations.
 
-The board can run Meshcore or Meshtastic firmware. Both need power-saving patches so the microcontroller can enter deep sleep.
+The board is compatible to Meshcore and Mesthastic. 
 
-For the Semtech modem I strictly recommend using an implementation with RX Duty Cycle activated - otherwise you will have a permanent consumption of 6-7mA which can cause power budget problems.
+Beware that both firmwares need Power Saving patches (Semtech RX duty cycle and uC deep sleep) due to the limited harvesting capability of the IC.
+
+
 
 ## Features
 
