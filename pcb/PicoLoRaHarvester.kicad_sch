@@ -4717,16 +4717,6 @@
 		)
 		(uuid "3359acb3-df9f-4a68-a32c-085405eb3eea")
 	)
-	(text "Safe default Boot:\nOVP=4.2V, LVD=2.2V\nLDO=Bypass, OCP=200mA\n\nWill be overwritten\nby I2C if needed\n\nThe STM32WL works \nfrom 2V-3.6V\n\nAfter boot we immediately \nset proper chemistry limits"
-		(exclude_from_sim no)
-		(at 25.4 28.702 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "41b14423-49fc-4087-ad79-881c214a9b86")
-	)
 	(text "+3v3"
 		(exclude_from_sim no)
 		(at 138.176 22.86 0)
@@ -4973,6 +4963,26 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 100.33) (xy 109.22 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00c49bba-1cbd-4d82-b9ba-ceae3d6257ff")
+	)
+	(wire
+		(pts
+			(xy 58.42 109.22) (xy 58.42 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00e39a60-b6cd-4a68-9a7b-585aeb3887f4")
+	)
+	(wire
+		(pts
 			(xy 132.08 142.24) (xy 128.27 142.24)
 		)
 		(stroke
@@ -5000,6 +5010,16 @@
 			(type default)
 		)
 		(uuid "020f2e84-702c-45d3-a219-dc74a80691ea")
+	)
+	(wire
+		(pts
+			(xy 86.36 111.76) (xy 85.09 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "027295b7-4ed6-4bc2-993c-a8f0395672ef")
 	)
 	(wire
 		(pts
@@ -5093,16 +5113,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 87.63) (xy 74.93 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "100eefdb-c6ea-4b0c-a486-fe6ef4acbbc1")
-	)
-	(wire
-		(pts
 			(xy 180.34 102.87) (xy 180.34 107.95)
 		)
 		(stroke
@@ -5173,6 +5183,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 109.22) (xy 100.33 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1698e525-16b7-4b91-b265-11c664e4d088")
+	)
+	(wire
+		(pts
 			(xy 29.21 73.66) (xy 29.21 66.04)
 		)
 		(stroke
@@ -5230,6 +5250,16 @@
 			(type default)
 		)
 		(uuid "1c7dfef1-833c-4d2d-9b5f-74a075b9e745")
+	)
+	(wire
+		(pts
+			(xy 48.26 109.22) (xy 48.26 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cc9e518-90ec-4112-a096-46ae1596fdcb")
 	)
 	(wire
 		(pts
@@ -5310,6 +5340,16 @@
 			(type default)
 		)
 		(uuid "2161bcc9-0bf4-467a-85c4-bb8aa64f7933")
+	)
+	(wire
+		(pts
+			(xy 104.14 109.22) (xy 104.14 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "238733d5-bf4d-4a1d-b4eb-e4b3053b18a6")
 	)
 	(wire
 		(pts
@@ -5420,6 +5460,26 @@
 			(type default)
 		)
 		(uuid "34565090-d54f-45a9-9d7a-88c73d22bcbe")
+	)
+	(wire
+		(pts
+			(xy 69.85 105.41) (xy 81.28 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "369cf64b-0ae6-4a00-9300-48d8f54a5868")
+	)
+	(wire
+		(pts
+			(xy 62.23 109.22) (xy 62.23 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3941c356-9a09-4d32-a775-d29de9281f37")
 	)
 	(wire
 		(pts
@@ -5623,7 +5683,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 87.63) (xy 72.39 91.44)
+			(xy 72.39 87.63) (xy 72.39 102.87)
 		)
 		(stroke
 			(width 0)
@@ -5843,7 +5903,17 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 87.63) (xy 64.77 90.17)
+			(xy 64.77 104.14) (xy 53.34 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7df6c732-3abc-4abf-9df7-c0810fcbc723")
+	)
+	(wire
+		(pts
+			(xy 64.77 87.63) (xy 64.77 104.14)
 		)
 		(stroke
 			(width 0)
@@ -5890,6 +5960,16 @@
 			(type default)
 		)
 		(uuid "809a0d71-503f-449d-9a6a-e2dd7e19154d")
+	)
+	(wire
+		(pts
+			(xy 72.39 102.87) (xy 95.25 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84ac1f07-3445-4ced-8864-4be1388b1251")
 	)
 	(wire
 		(pts
@@ -5940,6 +6020,16 @@
 			(type default)
 		)
 		(uuid "893f987e-6c81-4f32-ac1f-ed4636b248c9")
+	)
+	(wire
+		(pts
+			(xy 76.2 109.22) (xy 76.2 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bf524d9-23bc-4b43-87f9-c77e908facb2")
 	)
 	(wire
 		(pts
@@ -6093,6 +6183,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 111.76) (xy 99.06 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fcc3b50-0a72-4a26-9cfa-789ad62890ac")
+	)
+	(wire
+		(pts
 			(xy 193.04 146.05) (xy 193.04 147.32)
 		)
 		(stroke
@@ -6140,6 +6240,16 @@
 			(type default)
 		)
 		(uuid "a25ffff9-f39c-454f-8ce6-53ea1683e2af")
+	)
+	(wire
+		(pts
+			(xy 72.39 113.03) (xy 71.12 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3f21f02-b602-435f-8141-c045f7b4084e")
 	)
 	(wire
 		(pts
@@ -6263,6 +6373,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 102.87) (xy 95.25 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b053d6e6-a424-4f3b-9d3f-25e1cf2bb093")
+	)
+	(wire
+		(pts
 			(xy 198.12 146.05) (xy 198.12 165.1)
 		)
 		(stroke
@@ -6323,6 +6443,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 87.63) (xy 67.31 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8e91039-79a2-44dd-ba8d-a726768301e1")
+	)
+	(wire
+		(pts
 			(xy 64.77 45.72) (xy 64.77 34.29)
 		)
 		(stroke
@@ -6330,6 +6460,16 @@
 			(type default)
 		)
 		(uuid "ba851d2b-86d4-4636-98f2-f0342d49e900")
+	)
+	(wire
+		(pts
+			(xy 99.06 111.76) (xy 99.06 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba9e7629-fc5e-42eb-afc2-65859939ebff")
 	)
 	(wire
 		(pts
@@ -6383,16 +6523,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 87.63) (xy 67.31 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2a65c03-a6e0-4eac-8c07-6833662d5b6d")
-	)
-	(wire
-		(pts
 			(xy 43.18 87.63) (xy 44.45 87.63)
 		)
 		(stroke
@@ -6420,6 +6550,16 @@
 			(type default)
 		)
 		(uuid "c3d2ee54-469d-4650-92ef-93f87a41b77f")
+	)
+	(wire
+		(pts
+			(xy 53.34 104.14) (xy 53.34 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6833833-81fb-4216-9c97-79fbd68f3762")
 	)
 	(wire
 		(pts
@@ -6623,6 +6763,16 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 111.76) (xy 85.09 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df333279-b834-4e1f-8138-d5b2cdb738cc")
+	)
+	(wire
+		(pts
 			(xy 67.31 35.56) (xy 77.47 35.56)
 		)
 		(stroke
@@ -6633,13 +6783,23 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 87.63) (xy 69.85 91.44)
+			(xy 69.85 87.63) (xy 69.85 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e31dac71-40ae-4ad5-8ce7-489321b7d65e")
+	)
+	(wire
+		(pts
+			(xy 90.17 109.22) (xy 90.17 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3287d03-62a3-4a5e-9dcb-46b3bd5d7e4f")
 	)
 	(wire
 		(pts
@@ -6663,6 +6823,26 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 87.63) (xy 74.93 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8308f22-c5e6-4e75-8e87-5b774db4b4bf")
+	)
+	(wire
+		(pts
+			(xy 72.39 109.22) (xy 72.39 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e87fe48a-d0cc-48d6-971a-13504b47a7d1")
+	)
+	(wire
+		(pts
 			(xy 156.21 78.74) (xy 162.56 78.74)
 		)
 		(stroke
@@ -6680,6 +6860,16 @@
 			(type default)
 		)
 		(uuid "e92e4e2a-86ed-431b-bf7a-8e20f1fc3acc")
+	)
+	(wire
+		(pts
+			(xy 86.36 109.22) (xy 86.36 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eaf884a5-8ce2-4167-b93f-70a7425d8b6d")
 	)
 	(wire
 		(pts
@@ -6723,6 +6913,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 100.33) (xy 109.22 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f13a8983-f9d0-4ed7-8fa7-d784197e3ce1")
+	)
+	(wire
+		(pts
 			(xy 121.92 91.44) (xy 118.11 91.44)
 		)
 		(stroke
@@ -6730,6 +6930,16 @@
 			(type default)
 		)
 		(uuid "f15a748d-489c-4e38-aacb-a6600ad81455")
+	)
+	(wire
+		(pts
+			(xy 114.3 109.22) (xy 114.3 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f641aba7-131b-49d8-870f-4561036285bd")
 	)
 	(wire
 		(pts
@@ -6891,16 +7101,6 @@
 		)
 		(uuid "36051213-43f8-42de-9994-65ae28e594a8")
 	)
-	(label "CSTORE"
-		(at 74.93 91.44 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "3772df0b-8961-4e30-8c15-5dd8c51dddaf")
-	)
 	(label "GND"
 		(at 115.57 171.45 270)
 		(effects
@@ -6991,6 +7191,16 @@
 		)
 		(uuid "66d112a6-e970-41f1-b41a-9cf62b768a6d")
 	)
+	(label "CSTORE"
+		(at 62.23 111.76 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "67c30b92-17be-42f4-9f6f-6f082214f38c")
+	)
 	(label "U_TX"
 		(at 312.42 58.42 0)
 		(effects
@@ -7041,6 +7251,16 @@
 		)
 		(uuid "74a3b7bd-42e5-48b1-8cfc-e6b972db9e51")
 	)
+	(label "CSTORE"
+		(at 48.26 111.76 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "764bf565-b551-458e-b260-7219e774706c")
+	)
 	(label "I2C2_SDA"
 		(at 303.53 81.28 0)
 		(effects
@@ -7070,6 +7290,16 @@
 			(justify right bottom)
 		)
 		(uuid "8821a186-ab88-42a6-9b6e-b81157e1843e")
+	)
+	(label "CSTORE"
+		(at 90.17 111.76 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "88a9bfa6-197a-4508-81b4-0041a4670959")
 	)
 	(label "I2C2_SDA"
 		(at 143.51 133.35 0)
@@ -7111,16 +7341,6 @@
 		)
 		(uuid "99b00b00-9706-4426-adb5-6e2427375a6b")
 	)
-	(label "CSTORE"
-		(at 69.85 91.44 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "99be9a04-402e-4353-a282-b5ba5c8f5713")
-	)
 	(label "+3V0"
 		(at 128.27 125.73 180)
 		(effects
@@ -7130,6 +7350,16 @@
 			(justify right bottom)
 		)
 		(uuid "99d8668c-7f92-4465-9f73-ba523da36220")
+	)
+	(label "CSTORE"
+		(at 104.14 111.76 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9b89db07-31a9-4a8a-9edb-6737b938733f")
 	)
 	(label "+3V0"
 		(at 128.27 133.35 180)
@@ -7242,14 +7472,14 @@
 		(uuid "bcf8d9b4-205c-4f21-a052-6c8696858fff")
 	)
 	(label "CSTORE"
-		(at 72.39 91.44 270)
+		(at 76.2 111.76 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "cb5d0012-c467-444f-b359-c421ea62571c")
+		(uuid "c0859cde-5da5-4942-86c8-b2dff716b54e")
 	)
 	(label "I2C1_SCL"
 		(at 143.51 149.86 0)
@@ -7680,6 +7910,84 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 99.06 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "03288839-bd46-41f3-af9c-0e0c276159e7")
+		(property "Reference" "#PWR031"
+			(at 99.06 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 99.06 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 99.06 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e4371b83-10d5-4433-9e91-352648ac79e0")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -8460,6 +8768,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 114.3 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "12836a49-018a-4117-b5a0-619e4953c634")
+		(property "Reference" "#PWR032"
+			(at 114.3 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.3 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 114.3 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c07c93da-0318-4f91-9daf-4327e103b06b")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 133.35 73.66 90)
 		(unit 1)
@@ -8481,7 +8867,7 @@
 				)
 			)
 		)
-		(property "Value" "L"
+		(property "Value" "2.2uH"
 			(at 133.35 71.12 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8502,7 +8888,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2307101722_DMBJ-CXP0420-2R2M-AG-2-2uh_C7187306.pdf"
 			(at 133.35 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -8534,6 +8920,112 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 67.31 109.22 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "13ab263c-a4ab-47f1-b96f-e1013d212b9b")
+		(property "Reference" "JP3"
+			(at 67.31 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 67.31 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 67.31 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 67.31 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 67.31 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
+			(at 67.31 91.44 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
+			(at 67.31 88.9 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b7a4ed1a-ea11-4bf5-b2fb-fb17c701bbd7")
+		)
+		(pin "2"
+			(uuid "d2ae7e21-65a6-4a2b-aaea-c34333ac96d6")
+		)
+		(pin "3"
+			(uuid "0ce0bc5e-1255-4cd8-9daa-6b32445e9d49")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "JP3")
 					(unit 1)
 				)
 			)
@@ -9183,6 +9675,112 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 109.22 109.22 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "22ab3ea2-faf5-4a7c-aca2-a970212eaef7")
+		(property "Reference" "JP6"
+			(at 109.22 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 109.22 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 109.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 109.22 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
+			(at 109.22 91.44 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
+			(at 109.22 88.9 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f623d41-4111-4928-8bf0-e49fed2a271f")
+		)
+		(pin "2"
+			(uuid "c16e3660-3e7b-4d24-98a9-a681f84df190")
+		)
+		(pin "3"
+			(uuid "7e12c8ee-7e8e-486d-8e4c-482d6521e6c5")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "JP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 90.17 73.66 0)
 		(unit 1)
@@ -9283,7 +9881,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "22uF"
 			(at 160.02 83.8199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9504,19 +10102,29 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 67.31 102.87 0)
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 81.28 109.22 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "27f46a8b-437f-4efa-8030-7f6f0bc9dcc4")
-		(property "Reference" "#PWR014"
-			(at 67.31 109.22 0)
+		(uuid "26ebbfee-5170-414c-bdf9-0fab82405e9d")
+		(property "Reference" "JP4"
+			(at 81.28 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 81.28 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9526,18 +10134,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 67.31 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.31 102.87 0)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 81.28 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9548,7 +10146,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 102.87 0)
+			(at 81.28 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9558,10 +10156,32 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 67.31 102.87 0)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 81.28 96.52 0)
 			(hide yes)
 			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
+			(at 81.28 91.44 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
+			(at 81.28 88.9 0)
+			(hide yes)
+			(show_name yes)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -9570,12 +10190,18 @@
 			)
 		)
 		(pin "1"
-			(uuid "557a1540-ff28-4f4b-8dcc-ab62d5bb9500")
+			(uuid "3bb1fd08-7bee-4646-b2d2-396da4f22414")
+		)
+		(pin "2"
+			(uuid "7d9623d0-21e5-4faa-b1d8-b55b9e4634a5")
+		)
+		(pin "3"
+			(uuid "e9b76585-9640-43cb-9d07-9665ff900de0")
 		)
 		(instances
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
-					(reference "#PWR014")
+					(reference "JP4")
 					(unit 1)
 				)
 			)
@@ -10791,6 +11417,162 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 85.09 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4cf18397-0be2-4fa2-ac51-8346554a30d6")
+		(property "Reference" "#PWR016"
+			(at 85.09 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c9580fba-f852-47c2-89e4-66e301913eff")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4eda16aa-23bb-4b93-9b32-65b427531716")
+		(property "Reference" "#PWR014"
+			(at 71.12 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.12 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8b51739-8922-4ae9-8524-7c58aa924d2e")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 26.67 146.05 90)
 		(unit 1)
 		(body_style 1)
@@ -11375,6 +12157,112 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 95.25 109.22 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "806a99f5-40a1-4c4f-ae78-a3194ae9080e")
+		(property "Reference" "JP5"
+			(at 95.25 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 95.25 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 95.25 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 95.25 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
+			(at 95.25 91.44 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
+			(at 95.25 88.9 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3ea83a2-82d6-4e3c-98ec-31f5d6c81a04")
+		)
+		(pin "2"
+			(uuid "bd2a2aec-ae53-4c68-850d-331365b01414")
+		)
+		(pin "3"
+			(uuid "f80a43b2-d563-4475-b1b0-ea0f074663d6")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "JP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "own_symbols:NEH7100")
 		(at 12.7 29.21 0)
 		(unit 1)
@@ -11794,6 +12682,112 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 53.34 109.22 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "904a5455-f412-4b75-82e1-f2477765e2bb")
+		(property "Reference" "JP2"
+			(at 53.34 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 53.34 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 53.34 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 53.34 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
+			(at 53.34 91.44 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
+			(at 53.34 88.9 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "324cdcf0-c2b4-4581-84a7-398dc909764d")
+		)
+		(pin "2"
+			(uuid "714e091a-44c7-4550-819a-ddb7e4e6f61a")
+		)
+		(pin "3"
+			(uuid "8347601d-d255-4899-9463-5c3563c74c31")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "JP2")
 					(unit 1)
 				)
 			)
@@ -13187,84 +14181,6 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 64.77 90.17 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cb9dc1e7-60ad-4d45-b7ca-fd1655841316")
-		(property "Reference" "#PWR010"
-			(at 64.77 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 64.77 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 64.77 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 64.77 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a98c24c7-d4e4-4041-833d-455013bd86e4")
-		)
-		(instances
-			(project "PicoLoRaHarvester"
-				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
-					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -14806,6 +15722,84 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 58.42 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd897c90-d275-404b-a0c6-ed7080d35ebb")
+		(property "Reference" "#PWR012"
+			(at 58.42 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 58.42 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a33a086-4ec0-4499-846d-0b2bf651bbd4")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
