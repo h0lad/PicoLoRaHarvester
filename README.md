@@ -10,13 +10,14 @@ This PCB integrates a [RAK3172 LoRa module](https://docs.rakwireless.com/Product
 
 Main target are solar-powered LoRa nodes that run unattended in off-grid locations.
 
-The board can run Meshcore or Meshtastic firmware. Both need power-saving patches so the microcontroller can enter deep sleep.  As the modem has permanently activated RX (which consumes 6-9mA depending on TCXO or not) you must calculate you power budget extremely carefully due to the harvesting limitations.
+The board can run Meshcore or Meshtastic firmware. Both need power-saving patches so the microcontroller can enter deep sleep.
+
+For the Semtech modem I strictly recommend using an implementation with RX Duty Cycle activated - otherwise you will have a permanent consumption of 6-7mA which can power budget problems.
 
 ## Features
 
 * Energy harvesting via Nexperia NEH7100 PMIC: 15 μW to 100 mW input range, up to 95% efficiency
-* LiPo-safe PMIC hardware defaults: OVP=4.2 V, LVD=3.2 V, LDO=3.0 V, OCP=200 mA (overridable via I²C)
-* With a soldering bridge you can either go for the internal Nexperia NEF7100 LDO or use a TI TPS63900 Buck-Boost Converter. This is needed if you want to use exotic cells and need proper 3.3 V.
+* With a soldering bridge you can either go for the internal Nexperia NEH7100 LDO (for low BOM) or use a TI TPS63900 Buck-Boost Converter. This is needed if you want to use exotic cells and need proper 3.3 V.
 * USB bypass charging (VUSB) at up to 200 mA via the UART connector
 * Battery (ADC_LIPO) and solar (ADC_VBUS) voltage monitoring via 1:1 resistor dividers, on/off switchable with a n-Mosfet.
 
