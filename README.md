@@ -10,7 +10,7 @@ This PCB integrates a [RAK3172 LoRa module](https://docs.rakwireless.com/Product
 
 Main target are solar-powered LoRa nodes that run unattended in off-grid locations.
 
-The board is compatible to Meshcore and Mesthastic. 
+The board is compatible to Meshcore and Mesthastic. But basically it's a nice platform for all kind of LoRa(WAN) harvesting stuff.
 
 Beware that both firmwares need Power Saving patches (Semtech RX duty cycle and uC deep sleep) due to the limited harvesting capability of the IC.
 
@@ -24,6 +24,7 @@ Beware that both firmwares need Power Saving patches (Semtech RX duty cycle and 
 * With a soldering bridge you can either go for the internal Nexperia NEH7100 LDO (for low BOM) or use a TI TPS63900 Buck-Boost Converter
 * USB bypass charging (VUSB) at up to 200 mA via the UART connector
 * Battery (ADC_LIPO) voltage monitoring using a voltage divider, on/off switchable with a n-Mosfet
+* I²C Infineon FRAM (FM24V10) on the back for data logging 
 
 
 ## Physical Outlines
@@ -78,7 +79,7 @@ Yes - the mounting hole is not symmetric.
 | I2C1 | PA9 (SCL), PA10 (SDA) | J5 expansion connector for external sensors/peripherals |
 | I2C2 | PA12 (SCL), PA11 (SDA) | NEH7100 PMIC telemetry and configuration |
 
-Both I2C buses have on-board 10 kΩ pull-up resistors (R4/R10 for I2C1, R2/R9 for I2C2).
+Both I²C buses have on-board 10 kΩ pull-up resistors (R4/R10 for I2C1, R2/R9 for I2C2).
 
 ## Voltage Monitoring
 

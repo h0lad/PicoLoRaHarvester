@@ -2968,6 +2968,246 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "own_symbols:FM24V10-GTR_C466851"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FM24V10-GTR_C466851"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "libs:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+				(at 0 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/FRAM_Cypress-Semicon-FM24V10-GTR_C466851.html"
+				(at 0 -13.97 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C466851"
+				(at 0 -16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FM24V10-GTR_C466851_0_1"
+				(rectangle
+					(start -6.35 6.35)
+					(end 6.35 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -5.08 5.08)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 3.81 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 1.27 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 -1.27 0)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -8.89 -3.81 0)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 -3.81 180)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 -1.27 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 1.27 180)
+					(length 2.54)
+					(name "WP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.89 3.81 180)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "own_symbols:NEH7100"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4604,6 +4844,18 @@
 		)
 	)
 	(rectangle
+		(start 309.88 119.38)
+		(end 397.51 182.88)
+		(stroke
+			(width 0.508)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "23d905a0-2428-4751-af79-e7d63b2b8547")
+	)
+	(rectangle
 		(start 120.65 20.32)
 		(end 194.31 58.42)
 		(stroke
@@ -4696,6 +4948,16 @@
 			)
 		)
 		(uuid "08d617ae-a648-4c57-b234-86e157c80961")
+	)
+	(text "F-RAM"
+		(exclude_from_sim no)
+		(at 321.564 122.174 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "158531a3-5a32-4303-8414-dcfc25b44f77")
 	)
 	(text "USART"
 		(exclude_from_sim no)
@@ -4826,6 +5088,12 @@
 		(uuid "990b3ac0-683a-479c-ac68-4f7abce742dd")
 	)
 	(junction
+		(at 356.87 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9cdd8df8-cd09-436b-a800-0b8502499f6a")
+	)
+	(junction
 		(at 93.98 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4862,6 +5130,12 @@
 		(uuid "bed8daaf-e003-46f2-b186-eafb2ab132c7")
 	)
 	(junction
+		(at 328.93 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bfc9e1c5-24f4-41d7-8243-c9baa7424f62")
+	)
+	(junction
 		(at 133.35 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4892,6 +5166,12 @@
 		(uuid "ded68dec-4ff1-479a-9c2c-b5e13e486d9c")
 	)
 	(junction
+		(at 328.93 158.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eca22d8e-52f9-4768-b63c-6d8541a9efcd")
+	)
+	(junction
 		(at 22.86 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4916,6 +5196,10 @@
 	(no_connect
 		(at 300.99 55.88)
 		(uuid "2f9224ba-b437-40dc-8c6a-492ad2fce0a3")
+	)
+	(no_connect
+		(at 335.28 151.13)
+		(uuid "3a651ca3-16c5-49bc-bfb6-21b19e941f85")
 	)
 	(no_connect
 		(at 260.35 68.58)
@@ -5129,6 +5413,16 @@
 	)
 	(wire
 		(pts
+			(xy 356.87 151.13) (xy 356.87 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "116754d6-2f5e-4893-88a3-b23fbbaad8c0")
+	)
+	(wire
+		(pts
 			(xy 20.32 165.1) (xy 22.86 165.1)
 		)
 		(stroke
@@ -5189,6 +5483,16 @@
 	)
 	(wire
 		(pts
+			(xy 328.93 158.75) (xy 335.28 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "166de3b6-187e-4ad2-9d76-07ac69b84cf6")
+	)
+	(wire
+		(pts
 			(xy 100.33 109.22) (xy 100.33 111.76)
 		)
 		(stroke
@@ -5206,6 +5510,16 @@
 			(type default)
 		)
 		(uuid "17826d7a-35ec-493b-ade3-215147e57706")
+	)
+	(wire
+		(pts
+			(xy 356.87 144.78) (xy 356.87 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18b8fd42-4ce0-4881-a55a-8d5256a797ec")
 	)
 	(wire
 		(pts
@@ -5349,6 +5663,16 @@
 	)
 	(wire
 		(pts
+			(xy 353.06 156.21) (xy 358.14 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22430d33-43e7-4b12-b30e-9da5ac12ff17")
+	)
+	(wire
+		(pts
 			(xy 104.14 109.22) (xy 104.14 111.76)
 		)
 		(stroke
@@ -5356,6 +5680,16 @@
 			(type default)
 		)
 		(uuid "238733d5-bf4d-4a1d-b4eb-e4b3053b18a6")
+	)
+	(wire
+		(pts
+			(xy 370.84 153.67) (xy 370.84 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2395c954-ac1a-47de-97bd-fe2f968eb916")
 	)
 	(wire
 		(pts
@@ -5449,6 +5783,16 @@
 	)
 	(wire
 		(pts
+			(xy 335.28 153.67) (xy 328.93 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "327e4354-cb73-4ea6-9a73-0cf54d586002")
+	)
+	(wire
+		(pts
 			(xy 44.45 87.63) (xy 45.72 87.63)
 		)
 		(stroke
@@ -5536,6 +5880,16 @@
 			(type default)
 		)
 		(uuid "424f42e9-5e02-4ff5-8117-7281a3263680")
+	)
+	(wire
+		(pts
+			(xy 372.11 144.78) (xy 372.11 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "470d8e9f-ec99-416f-b1aa-78c3d9bee606")
 	)
 	(wire
 		(pts
@@ -5649,6 +6003,16 @@
 	)
 	(wire
 		(pts
+			(xy 353.06 158.75) (xy 358.14 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "562114c1-1e85-49f4-bf66-d99b52c05bed")
+	)
+	(wire
+		(pts
 			(xy 191.77 127) (xy 189.23 127)
 		)
 		(stroke
@@ -5676,6 +6040,16 @@
 			(type default)
 		)
 		(uuid "58929007-21bc-4736-a00a-088930301fd6")
+	)
+	(wire
+		(pts
+			(xy 353.06 151.13) (xy 356.87 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5901020f-7d35-4906-986f-d7725af21f9d")
 	)
 	(wire
 		(pts
@@ -6149,6 +6523,16 @@
 	)
 	(wire
 		(pts
+			(xy 368.3 144.78) (xy 372.11 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "974a6fef-c46f-4957-97f7-33c127f08997")
+	)
+	(wire
+		(pts
 			(xy 135.89 111.76) (xy 133.35 111.76)
 		)
 		(stroke
@@ -6439,6 +6823,16 @@
 	)
 	(wire
 		(pts
+			(xy 328.93 153.67) (xy 328.93 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1335b59-d4b7-41a2-83ec-70bd5f61f0ef")
+	)
+	(wire
+		(pts
 			(xy 261.62 170.18) (xy 261.62 172.72)
 		)
 		(stroke
@@ -6456,6 +6850,16 @@
 			(type default)
 		)
 		(uuid "b6b6841c-2f10-48eb-bfaf-e9e087db43ad")
+	)
+	(wire
+		(pts
+			(xy 328.93 156.21) (xy 328.93 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7d1b42d-2f40-492f-86cd-8cbe41d80c76")
 	)
 	(wire
 		(pts
@@ -6789,6 +7193,16 @@
 	)
 	(wire
 		(pts
+			(xy 356.87 144.78) (xy 360.68 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd14a19b-9675-4407-b174-e9e2007a631c")
+	)
+	(wire
+		(pts
 			(xy 177.8 102.87) (xy 177.8 107.95)
 		)
 		(stroke
@@ -6856,6 +7270,16 @@
 			(type default)
 		)
 		(uuid "e432978d-5bbe-481f-bc40-98270c978899")
+	)
+	(wire
+		(pts
+			(xy 353.06 153.67) (xy 370.84 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4ce709a-dbfa-434b-8dd1-99576acf1409")
 	)
 	(wire
 		(pts
@@ -6949,6 +7373,16 @@
 	)
 	(wire
 		(pts
+			(xy 328.93 158.75) (xy 328.93 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eff32f7c-bd45-405c-a2b0-bbaca2ee3d3e")
+	)
+	(wire
+		(pts
 			(xy 74.93 100.33) (xy 109.22 100.33)
 		)
 		(stroke
@@ -6966,6 +7400,16 @@
 			(type default)
 		)
 		(uuid "f15a748d-489c-4e38-aacb-a6600ad81455")
+	)
+	(wire
+		(pts
+			(xy 335.28 156.21) (xy 328.93 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f58f63c2-14c7-4ad6-bb52-d3ae1410824c")
 	)
 	(wire
 		(pts
@@ -7497,6 +7941,16 @@
 		)
 		(uuid "b11cd9c1-0f92-4d0a-9e14-480e2d39bf7e")
 	)
+	(label "I2C1_SCL"
+		(at 358.14 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b14ea75a-8af1-455e-9911-ee0480578c30")
+	)
 	(label "+3V0"
 		(at 128.27 142.24 180)
 		(effects
@@ -7526,6 +7980,16 @@
 			(justify right bottom)
 		)
 		(uuid "c0859cde-5da5-4942-86c8-b2dff716b54e")
+	)
+	(label "I2C1_SDA"
+		(at 358.14 158.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c200566a-57fa-41f4-bbfa-8b56b0fedbc6")
 	)
 	(label "I2C1_SCL"
 		(at 143.51 149.86 0)
@@ -9072,6 +9536,115 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "JP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "own_symbols:FM24V10-GTR_C466851")
+		(at 344.17 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "141c0583-9db8-4f50-b688-5eeca94dc9d9")
+		(property "Reference" "U4"
+			(at 344.17 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FM24V10-GTR_C466851"
+			(at 344.17 146.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
+			(at 344.17 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/FRAM_Cypress-Semicon-FM24V10-GTR_C466851.html"
+			(at 344.17 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 344.17 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C466851"
+			(at 344.17 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "dfed9d63-c6ef-4a9a-82a2-58de076d8e3c")
+		)
+		(pin "2"
+			(uuid "ac5658b6-71a4-41f1-b67a-176cb2a614ae")
+		)
+		(pin "1"
+			(uuid "472559cd-2205-42d0-b6ba-1cd196703e89")
+		)
+		(pin "4"
+			(uuid "b99d17a4-94af-45ac-9b66-f0ba84fa81ce")
+		)
+		(pin "5"
+			(uuid "ef5068b8-47da-4851-909b-2d5eee99fcdf")
+		)
+		(pin "7"
+			(uuid "fbbfa8db-35f4-4fd4-9bfb-3a5db9ca7637")
+		)
+		(pin "8"
+			(uuid "69b86419-4145-45f2-a886-59bf2ff8cba6")
+		)
+		(pin "6"
+			(uuid "ab55d47b-3863-4658-b5ee-a47cedf08bc9")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -11853,6 +12426,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 370.84 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66c5d3af-0c45-4f62-9b27-c058c5a4f98a")
+		(property "Reference" "#PWR033"
+			(at 370.84 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 370.84 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 370.84 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 370.84 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 370.84 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d14ddb87-4884-4ddf-b97b-36ef9a9f6470")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 248.92 176.53 0)
 		(unit 1)
 		(body_style 1)
@@ -12464,6 +13115,84 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V0")
+		(at 356.87 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84444ba2-cbbb-4367-b6ff-b6b4f16ed538")
+		(property "Reference" "#PWR034"
+			(at 356.87 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V0"
+			(at 356.87 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 356.87 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 356.87 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V0\""
+			(at 356.87 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2474ed67-07bb-48a6-97b1-1851d6783175")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -13797,6 +14526,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 328.93 160.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9596dbf-1944-40d2-98a8-995da472d9a2")
+		(property "Reference" "#PWR035"
+			(at 328.93 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 328.93 165.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 328.93 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 328.93 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 328.93 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f29eccb8-aa8c-44e6-a846-3d721a87b963")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x04_Socket")
 		(at 118.11 161.29 90)
 		(unit 1)
@@ -14466,6 +15273,86 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 364.49 144.78 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd41e525-a7a4-4c7c-905e-ce8b48f454ba")
+		(property "Reference" "C16"
+			(at 364.49 137.16 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 364.49 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 368.3 143.8148 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 364.49 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 364.49 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fb9d6c6c-0a2f-4a2c-881c-cf6f366425f9")
+		)
+		(pin "1"
+			(uuid "a5e4536e-de53-458b-a664-6b9a0082edea")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -15389,6 +16276,84 @@
 			(project "PicoLoRaHarvester"
 				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
 					(reference "#FLG06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 372.11 146.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e617e02a-054c-44bb-91ad-0a60ce9f123e")
+		(property "Reference" "#PWR036"
+			(at 372.11 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 372.11 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 372.11 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 372.11 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 372.11 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0501134a-7f6c-46ca-a176-2e6d00da3171")
+		)
+		(instances
+			(project "PicoLoRaHarvester"
+				(path "/256f162e-4f54-42b3-a315-b65231ce36a5"
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
