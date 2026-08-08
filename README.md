@@ -62,8 +62,8 @@ Yes - the mounting hole is not symmetric.
 | PA5 | SPI1 CLK | J1 pin 4 |
 | PA6 | SPI1 MISO | J1 pin 5 |
 | PA7 | SPI1 MOSI | J1 pin 6 |
-| PA9 | I2C1 SCL | J5 pin 4 |
-| PA10 | I2C1 SDA | J5 pin 3 |
+| PA9 | I2C1 SCL | J5 pin 4, U4 (FM24V10) SCL |
+| PA10 | I2C1 SDA | J5 pin 3, U4 (FM24V10) SDA |
 | PA11 | I2C2 SDA | NEH7100 SDA (PMIC config bus) |
 | PA12 | I2C2 SCL | NEH7100 SCL (PMIC config bus) |
 | PA13 | SWDIO | J6 pin 3 |
@@ -77,7 +77,7 @@ Yes - the mounting hole is not symmetric.
 
 | Bus | Pins | Purpose |
 |-----|------|---------|
-| I2C1 | PA9 (SCL), PA10 (SDA) | J5 expansion connector for external sensors/peripherals |
+| I2C1 | PA9 (SCL), PA10 (SDA) | J5 expansion connector for external sensors/peripherals + FM24V10 F-RAM (U4, on the back) for data logging |
 | I2C2 | PA12 (SCL), PA11 (SDA) | NEH7100 PMIC telemetry and configuration |
 
 Both I²C buses have on-board 10 kΩ pull-up resistors (R4/R10 for I2C1, R2/R9 for I2C2).

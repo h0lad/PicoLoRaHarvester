@@ -14004,7 +14004,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO14580_Pad_TopOnly"
 			(at 64.77 173.99 0)
 			(hide yes)
 			(show_name no)
