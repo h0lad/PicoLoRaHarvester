@@ -19,7 +19,8 @@ Beware that both firmwares need Power Saving patches (Semtech RX duty cycle and 
 ## Features
 
 * Energy harvesting via Nexperia NEH7100 PMIC: 15 μW to 100 mW input range, up to 95% efficiency
-* Compatible to basically all all 1-cell storage devices: LiPo, LiFePo4, LTO, Supercaps, etc.
+* Compatible to basically all all 1-cell energy storage: LiPo, LiFePo4, LTO, Supercaps, etc.
+* Storage Type, OVP/UVP/etc. can be configured with solder bridges on the back
 * With a soldering bridge you can either go for the internal Nexperia NEH7100 LDO (for low BOM) or use a TI TPS63900 Buck-Boost Converter
 * USB bypass charging (VUSB) at up to 200 mA via the UART connector
 * Battery (ADC_LIPO) voltage monitoring using a voltage divider, on/off switchable with a n-Mosfet
