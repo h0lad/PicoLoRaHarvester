@@ -10,10 +10,11 @@ This PCB integrates a [RAK3172 LoRa module](https://docs.rakwireless.com/Product
 
 Main target are solar-powered LoRa nodes that run unattended in off-grid locations.
 
-The board is compatible to Meshcore and Mesthastic. But basically it's a nice platform for all kind of LoRa(WAN) harvesting stuff.
+The board is compatible to Meshcore and Mesthastic. But basically it's a nice platform for all kind of LoRa(WAN) applications.
 
 Beware that both firmwares need Power Saving patches (Semtech RX duty cycle and uC deep sleep) due to the limited harvesting capability of the IC.
 
+For get the basic device running you only have to populate the NEF7100 + Voltage Divider with Mosfet + RAK3172 + Switch + SWD. All others (FRAM/DCDC) is optional. This should make it by far the cheapest Meshcore repeater in the market.
 
 
 ## Features
