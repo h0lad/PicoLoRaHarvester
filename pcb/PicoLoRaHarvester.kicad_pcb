@@ -13798,6 +13798,32 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "v1.0.0"
+		(at 179.85 105.95 0)
+		(layer "F.SilkS")
+		(uuid "a7b80af1-f2cb-46c7-80a4-485c42787154")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.1524)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "PicoLoraHarvester"
+		(at 158.65 99.35 90)
+		(layer "F.SilkS")
+		(uuid "5403022c-98c9-451a-92bf-0903aece54c2")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.1524)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "GND"
 		(at 160.266667 101.95 90)
 		(layer "F.SilkS")
