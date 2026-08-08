@@ -13299,7 +13299,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "10M"
 			(at 124.46 109.2199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14004,7 +14004,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO14580_Pad_TopOnly"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
 			(at 64.77 173.99 0)
 			(hide yes)
 			(show_name no)
