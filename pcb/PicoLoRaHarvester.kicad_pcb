@@ -94,7 +94,6 @@
 			(dielectric_constraints no)
 		)
 		(pad_to_mask_clearance 0)
-		(solder_mask_min_width 0.1)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting
 			(front yes)
@@ -13800,6 +13799,19 @@
 		(at 174.796357 90.175 0)
 		(layer "F.SilkS")
 		(uuid "700d3c7a-5fc7-4a73-8fb8-556a2a3c347c")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.1524)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "<LDO"
+		(at 175 88.71 0)
+		(layer "F.SilkS")
+		(uuid "f950585d-1cc3-4deb-b108-f37fbf525ced")
 		(effects
 			(font
 				(size 0.8128 0.8128)
