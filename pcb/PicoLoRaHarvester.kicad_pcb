@@ -906,7 +906,7 @@
 		(descr "WSON, 10 Pin (http://www.ti.com/lit/gpn/tps63030#page=24)")
 		(tags "WSON NoLead")
 		(property "Reference" "U3"
-			(at -1 -2.31 90)
+			(at -0.08 -2.25 90)
 			(layer "F.SilkS")
 			(uuid "54c4245e-fea5-4518-828f-cd0a1845b0fd")
 			(effects
@@ -2567,7 +2567,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R6"
-			(at -0.05 1.7 0)
+			(at -2.51 0.02 90)
 			(layer "F.SilkS")
 			(uuid "0249e8e8-36a6-4b81-9993-fe382593aefd")
 			(effects
@@ -8883,7 +8883,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R5"
-			(at 3.05 -0.375 0)
+			(at -0.12 -1.57 0)
 			(layer "F.SilkS")
 			(uuid "5a341e08-9b72-4d4c-9879-77678dcd5ef5")
 			(effects
@@ -13760,6 +13760,19 @@
 		(at 153.5 111.8 0)
 		(layer "F.SilkS")
 		(uuid "49e250c7-5c1b-437c-bb5f-d6a8d8e373bb")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.1524)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "DCDC>"
+		(at 168.14 84.78 0)
+		(layer "F.SilkS")
+		(uuid "caab5e60-cf80-467d-ac79-6f8754a72b7e")
 		(effects
 			(font
 				(size 0.8128 0.8128)
