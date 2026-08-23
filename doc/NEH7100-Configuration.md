@@ -10,9 +10,11 @@ LDO in bypass: `VLDO` follows `VBAT`.
 | LiFePO4 | mountain | `11010` | 3.50 / 2.50 / 150 mA | `0x65` 2.80 / 3.50 | `0x87` | `0x00` |
 | LiFePO4 | indoor | `11010` | 3.50 / 2.50 / 150 mA | `0x36` 2.50 / 3.60 | `0x87` | `0x01` |
 
-## NEH7100 with a connected Buck-Boost (3.0 V) → STM32WLE
+## NEH7100 with a connected Buck-Boost (3.3 V) → STM32WLE
 
 LDO in bypass: `VLDO` follows `VBAT`. STM32 runs from the converter.
+
+This might be needed if you are either using Na-ion (which has a useable voltage range below 3.0V) or even with a LiPo if you need the full 3.3V for unlimited TX power of the LoRa module.
 
 | Chemistry | Climate | HC\[4:0\] | HC live (OVP / LVD / USB) | `0x00` | `0x01` | `0x05` |
 |---|---|---|---|---|---|---|
@@ -24,7 +26,7 @@ LDO in bypass: `VLDO` follows `VBAT`. STM32 runs from the converter.
 
 ## NEH7100 with internal LDO → STM32WLE
 
-LDO set to 3.0 V. STM32 runs from `VLDO`.
+LDO set to 3.0 V. STM32 runs from `VLDO`. The "budget" variant.
 
 | Chemistry | Climate | HC\[4:0\] | HC live (OVP / LVD / USB) | `0x00` | `0x01` | `0x05` |
 |---|---|---|---|---|---|---|
