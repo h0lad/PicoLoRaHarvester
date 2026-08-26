@@ -125,6 +125,17 @@ The USB input (VUSB on J3 pin 2) bypasses the charge pump and can supply up to 2
 * The pinout groups the flying caps, I²C and power pins by side, so routing needs no crossovers and there are no switching inductor loops to keep tight.
 
 
+## Hardware Verification
+
+![PicoLoRaHarvester](doc/picoloraharvester_hw.jpg)
+
+✅ HC 00001 Configuration works
+
+✅ Bat -> 3.0V via LDO
+
+✅ Charging Bat via VIN
+
+
 ## License
 
 CERN-OHL-S-2.0
