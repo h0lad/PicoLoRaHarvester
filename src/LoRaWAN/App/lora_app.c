@@ -114,7 +114,7 @@ typedef enum TxEventType_e
 /* USER CODE BEGIN PD */
 #define TTN_MAX_DAILY_AIRTIME_S       30UL
 #define SECONDS_PER_DAY               86400UL
-#define TTN_AIRTIME_USAGE_PCT         80UL
+#define TTN_AIRTIME_USAGE_PCT         100UL
 #define TX_INTERVAL_MIN_S             60UL
 #define LORAWAN_MAC_OVERHEAD_BYTES    13UL
 #define DOWNLINK_CMD_UPLINK           0x01U
@@ -488,7 +488,7 @@ static void StoreContext(const modem_context_type_t ctx_type, uint32_t offset, c
     break;
     case CONTEXT_LORAWAN_STACK:
     {
-      ret_status = FLASH_IF_Write((void *)ADDR_FLASH_LORAWAN_CONTEXT, (const void *)buffer, (uint32_t)LORAWAN_CONTEXT_SIZE);
+      ret_status = FLASH_IF_Write((void *)((uint32_t)(ADDR_FLASH_LORAWAN_CONTEXT + offset)), (const void *)buffer, (uint32_t)LORAWAN_CONTEXT_SIZE);
     }
     break;
     case CONTEXT_SECURE_ELEMENT:
@@ -536,7 +536,7 @@ static void EventCallback(void)
         /* Set user region */
         ASSERT_SMTC_MODEM_RC(smtc_modem_set_region(stack_id, ACTIVE_REGION));
 
-        ASSERT_SMTC_MODEM_RC(smtc_modem_set_join_duty_cycle_backoff_bypass(stack_id, true));
+        ASSERT_SMTC_MODEM_RC(smtc_modem_set_join_duty_cycle_backoff_bypass(stack_id, false));
 
         /* Print Security material */
         SecureElementPrintKeys(stack_id);
@@ -714,52 +714,71 @@ static void EventCallback(void)
 
 /* USER CODE END PB_Callbacks */
 
+static void RestartUplinkAlarm(uint32_t interval_s)
+{
+  if (EventType != TX_ON_TIMER)
+  {
+    return;
+  }
+
+  smtc_modem_status_mask_t status_mask = 0;
+  smtc_modem_get_status(STACK_ID, &status_mask);
+  if (CertMode || ((status_mask & SMTC_MODEM_STATUS_JOINED) != SMTC_MODEM_STATUS_JOINED))
+  {
+    ASSERT_SMTC_MODEM_RC(smtc_modem_alarm_start_timer(CERT_TX_DUTYCYCLE));
+  }
+  else
+  {
+    int32_t dtc_ms = 0;
+    smtc_modem_get_duty_cycle_status(STACK_ID, &dtc_ms);
+    if (dtc_ms < 0)
+    {
+      uint32_t dtc_s = (uint32_t)(((uint32_t)(-dtc_ms) + 999UL) / 1000UL);
+      if (dtc_s > interval_s)
+      {
+        interval_s = dtc_s;
+      }
+    }
+    ASSERT_SMTC_MODEM_RC(smtc_modem_alarm_start_timer(interval_s));
+  }
+}
+
 static void SendTxData(uint8_t port)
 {
   /* USER CODE BEGIN SendTxData_1 */
   telemetry_data_t telemetry = {0};
   uint8_t bufferSize = 0;
 
-  telemetry_collect(&telemetry);
+  if (!telemetry_collect(&telemetry))
+  {
+    APP_LOG(TS_OFF, VLEVEL_M, "No valid telemetry data yet, skip uplink\r\n");
+    RestartUplinkAlarm(TX_INTERVAL_MIN_S);
+    return;
+  }
+
   bufferSize = telemetry_encode(&telemetry, AppDataBuffer);
 
-  APP_LOG(TS_OFF, VLEVEL_M, "sensors cur %u/%u/%u uA  vbat %u mV\r\n",
+  APP_LOG(TS_OFF, VLEVEL_M, "sensors cur %u/%u/%u uA  vbat %u/%u/%u mV\r\n",
           telemetry.current_min_ua, telemetry.current_avg_ua, telemetry.current_max_ua,
-          telemetry.voltage_avg_mv);
-  APP_LOG(TS_OFF, VLEVEL_M, "sensors temp %d.%d/%d.%d/%d.%d C\r\n",
-          telemetry.temperature_min / 10, abs(telemetry.temperature_min % 10),
+          telemetry.voltage_min_mv, telemetry.voltage_avg_mv, telemetry.voltage_max_mv);
+  APP_LOG(TS_OFF, VLEVEL_M, "sensors temp %d.%d C  hum %u.%u %%  mcu %d.%d C\r\n",
           telemetry.temperature_avg / 10, abs(telemetry.temperature_avg % 10),
-          telemetry.temperature_max / 10, abs(telemetry.temperature_max % 10));
-  APP_LOG(TS_OFF, VLEVEL_M, "sensors hum %u.%u/%u.%u/%u.%u %%  mcu %d.%d C\r\n",
-          telemetry.humidity_min / 10, telemetry.humidity_min % 10,
           telemetry.humidity_avg / 10, telemetry.humidity_avg % 10,
-          telemetry.humidity_max / 10, telemetry.humidity_max % 10,
           telemetry.mcu_temperature / 10, abs(telemetry.mcu_temperature % 10));
 
   ASSERT_SMTC_MODEM_RC(smtc_modem_request_uplink(STACK_ID, port, false, AppDataBuffer, bufferSize));
 
   /* Restart the periodical uplink alarm */
-  if (EventType == TX_ON_TIMER)
-  {
-    smtc_modem_status_mask_t status_mask = 0;
-    smtc_modem_get_status(STACK_ID, &status_mask);
-    if (CertMode || ((status_mask & SMTC_MODEM_STATUS_JOINED) != SMTC_MODEM_STATUS_JOINED))
-    {
-      ASSERT_SMTC_MODEM_RC(smtc_modem_alarm_start_timer(CERT_TX_DUTYCYCLE));
-    }
-    else
-    {
-      ASSERT_SMTC_MODEM_RC(smtc_modem_alarm_start_timer(compute_tx_interval_s(lorawan_api_next_dr_get(STACK_ID))));
-    }
-  }
+  RestartUplinkAlarm(compute_tx_interval_s(lorawan_api_next_dr_get(STACK_ID)));
+
   /* USER CODE END SendTxData_1 */
 }
 
 /* USER CODE BEGIN PrFD_LedEvents */
 static uint32_t compute_toa_ms(uint8_t dr, uint8_t payload_len)
 {
-  static const uint8_t sf_lut[6] = { 12, 11, 10, 9, 8, 7 };
   uint32_t sf;
+  uint32_t bw_hz;
   uint32_t symbol_us;
   uint32_t preamble_us;
   uint32_t num;
@@ -767,17 +786,47 @@ static uint32_t compute_toa_ms(uint8_t dr, uint8_t payload_len)
   uint32_t de;
   uint32_t total_us;
 
-  if (dr > 5)
+  if (dr > 6)
   {
-    dr = 5;
+    dr = 6;
   }
-  sf = sf_lut[dr];
 
-  symbol_us = ((1UL << sf) * 1000000UL) / 125000UL;
+  switch (dr)
+  {
+    case 0:
+      sf = 12;
+      bw_hz = 125000UL;
+      break;
+    case 1:
+      sf = 11;
+      bw_hz = 125000UL;
+      break;
+    case 2:
+      sf = 10;
+      bw_hz = 125000UL;
+      break;
+    case 3:
+      sf = 9;
+      bw_hz = 125000UL;
+      break;
+    case 4:
+      sf = 8;
+      bw_hz = 125000UL;
+      break;
+    case 5:
+      sf = 7;
+      bw_hz = 125000UL;
+      break;
+    default:
+      sf = 7;
+      bw_hz = 250000UL;
+      break;
+  }
+
+  symbol_us = ((1UL << sf) * 1000000UL) / bw_hz;
   preamble_us = (49UL * symbol_us) / 4UL;
   de = (sf >= 11) ? 1UL : 0UL;
 
-  /* n = 8 + ceil((8*PL - 4*SF + 28 + 16) / (4*(SF - 2*DE))) * 5 */
   num = 8UL * payload_len - 4UL * sf + 28UL + 16UL;
   den = 4UL * (sf - 2UL * de);
   total_us = preamble_us + (8UL + ((num + den - 1UL) / den) * 5UL) * symbol_us;
@@ -788,8 +837,8 @@ static uint32_t compute_toa_ms(uint8_t dr, uint8_t payload_len)
 static uint32_t compute_tx_interval_s(uint8_t dr)
 {
   uint32_t toa_ms = compute_toa_ms(dr, TELEMETRY_PAYLOAD_SIZE + LORAWAN_MAC_OVERHEAD_BYTES);
-  uint32_t interval_s = (toa_ms * SECONDS_PER_DAY * 100UL) /
-                        (TTN_MAX_DAILY_AIRTIME_S * 1000UL * TTN_AIRTIME_USAGE_PCT);
+  uint32_t interval_s = (uint32_t)(((uint64_t)toa_ms * SECONDS_PER_DAY * 100UL) /
+                                   (TTN_MAX_DAILY_AIRTIME_S * 1000UL * TTN_AIRTIME_USAGE_PCT));
 
   if (interval_s < TX_INTERVAL_MIN_S)
   {

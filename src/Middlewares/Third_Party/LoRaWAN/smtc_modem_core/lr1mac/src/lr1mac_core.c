@@ -559,6 +559,12 @@ status_lorawan_t lr1mac_core_join( lr1_stack_mac_t* lr1_mac_obj, uint32_t target
 #endif 
 
     lr1_stack_mac_join_request_build( lr1_mac_obj );
+
+    /* Persist the freshly incremented DevNonce before the radio TX so a power
+       loss cannot roll the counter backwards and make the network server reject
+       the next join with "DevNonce is too small". */
+    lr1mac_core_context_save( lr1_mac_obj );
+
     lr1_mac_obj->rx1_delay_s   = smtc_real_get_rx1_join_delay( lr1_mac_obj->real );
     lr1_mac_obj->rx2_data_rate = smtc_real_get_rx2_join_dr( lr1_mac_obj->real );
 
@@ -861,7 +867,7 @@ void lr1mac_core_context_save( lr1_stack_mac_t* lr1_mac_obj )
         ( memcmp( ctx.join_nonce, lr1_mac_obj->join_nonce, sizeof( ctx.join_nonce ) ) != 0 ) ||
         ( ctx.certification_enabled != lr1_mac_obj->is_lorawan_modem_certification_enabled ) ||
         ( ctx.region != lr1_mac_obj->real->region_type ) ||
-		ctx.certification_port_disabled)
+        ( ctx.certification_port_disabled != lr1_mac_obj->is_lorawan_modem_certification_port_deactivated ) )
     {
         ctx.ctx_version = LORAWAN_NVM_CTX_VERSION;
         ctx.devnonce    = lr1_mac_obj->dev_nonce;

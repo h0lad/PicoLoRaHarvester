@@ -11,10 +11,14 @@ ENTRY(Reset_Handler)
 /* Memories definition */
 MEMORY
 {
-  ROM    (rx)    : ORIGIN = 0x08000000, LENGTH = 256K
+  ROM    (rx)    : ORIGIN = 0x08000000, LENGTH = 252K    /* last 4K (2 pages) reserved for LoRaWAN NVM context */
   RAM1   (xrw)   : ORIGIN = 0x20000000, LENGTH = 32K    /* Non-backup SRAM1 */
   RAM2   (xrw)   : ORIGIN = 0x20008000, LENGTH = 32K    /* Backup SRAM2 */
 }
+
+/* LoRaWAN NVM context base (see LORAWAN_NVM_BASE_ADDRESS in lora_app.c) */
+_NVM_CONTEXT_BASE = 0x0803F000;
+ASSERT(ORIGIN(ROM) + LENGTH(ROM) <= _NVM_CONTEXT_BASE, "ROM region overlaps the LoRaWAN NVM context area (0x0803F000)")
 /* Highest address of the user mode stack */
 _estack = ORIGIN(RAM1) + LENGTH(RAM1); /* end of "SRAM1" Ram type memory */
 

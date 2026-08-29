@@ -19,7 +19,6 @@ set(MX_Include_Dirs
     ${CMAKE_CURRENT_SOURCE_DIR}/../../LoRaWAN/Target
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32WLxx_HAL_Driver/Inc
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/driver
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/sht3x
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/adc_if
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/neh7100

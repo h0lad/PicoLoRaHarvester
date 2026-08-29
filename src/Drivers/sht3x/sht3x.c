@@ -18,7 +18,7 @@ static uint8_t crc8(const uint8_t *p, uint8_t len)
     return crc;
 }
 
-static int sht3x_init(const struct device *dev)
+static int sht3x_api_init(const struct sht3x_device *dev)
 {
     const struct sht3x_cfg *cfg = dev->cfg;
     uint8_t cmd[2] = { (uint8_t)(CMD_MEAS_HIGH >> 8), (uint8_t)(CMD_MEAS_HIGH & 0xFF) };
@@ -31,10 +31,9 @@ static int sht3x_init(const struct device *dev)
     return 0;
 }
 
-static int sht3x_read(const struct device *dev, void *buf)
+static int sht3x_api_read(const struct sht3x_device *dev, struct sht3x_sample *sample)
 {
     const struct sht3x_cfg *cfg = dev->cfg;
-    struct sht3x_sample *s = buf;
     uint8_t cmd[2] = { (uint8_t)(CMD_MEAS_HIGH >> 8), (uint8_t)(CMD_MEAS_HIGH & 0xFF) };
     uint8_t data[6];
     uint16_t raw_t, raw_h;
@@ -57,13 +56,13 @@ static int sht3x_read(const struct device *dev, void *buf)
     raw_t = (uint16_t)((data[0] << 8) | data[1]);
     raw_h = (uint16_t)((data[3] << 8) | data[4]);
 
-    s->temp_cd = (int16_t)((1750U * raw_t) / 65535U) - 450;
-    s->hum_permille = (uint16_t)((1000U * raw_h) / 65535U);
+    sample->temp_cd = (int16_t)((1750U * raw_t) / 65535U) - 450;
+    sample->hum_permille = (uint16_t)((1000U * raw_h) / 65535U);
 
     return 0;
 }
 
-const struct driver_api sht3x_api = {
-    .init = sht3x_init,
-    .read = sht3x_read,
+const struct sht3x_api sht3x_api = {
+    .init = sht3x_api_init,
+    .read = sht3x_api_read,
 };

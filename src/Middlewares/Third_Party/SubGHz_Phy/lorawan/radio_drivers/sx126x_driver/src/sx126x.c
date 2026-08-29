@@ -1282,25 +1282,31 @@ sx126x_status_t sx126x_set_ant_switch( bool is_tx_on )
 {
   RBI_Switch_TypeDef state = RBI_SWITCH_RX;
 
-  uint8_t paSelect= RFO_LP;
-
   if (is_tx_on)
   {
+      uint8_t paSelect = RFO_HP;
+
+      switch ( RBI_GetTxConfig() )
+      {
+          case RBI_CONF_RFO_LP:
+              paSelect = RFO_LP;
+              break;
+          case RBI_CONF_RFO_HP:
+          case RBI_CONF_RFO_LP_HP:
+          default:
+              paSelect = RFO_HP;
+              break;
+      }
+
       if (paSelect == RFO_LP)
       {
           state = RBI_SWITCH_RFO_LP;
-          if ( 1U == RBI_IsDCDC() )
-          {
-            uint8_t modReg;
-            HAL_SUBGHZ_ReadRegisters( &hsubghz, SUBGHZ_SMPSC2R, &modReg, 1 );
-            modReg&= (~SMPS_DRV_MASK);
-            HAL_SUBGHZ_WriteRegisters( &hsubghz, SUBGHZ_SMPSC2R, (uint8_t*)&modReg, 1 );
-          }
-
+          Radio_SMPS_Set(SMPS_DRIVE_SETTING_MAX);
       }
-      if (paSelect == RFO_HP)
+      else /* RFO_HP */
       {
           state = RBI_SWITCH_RFO_HP;
+          Radio_SMPS_Set(SMPS_DRIVE_SETTING_DEFAULT);
       }
   }
   else

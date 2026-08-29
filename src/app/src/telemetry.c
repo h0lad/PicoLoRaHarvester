@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FAST_PERIOD_MS   30000UL
-#define SLOW_PERIOD_MS   300000UL
+#define FAST_PERIOD_MS   1000UL
+#define SHT3X_PERIOD_MS  10000UL
 #define DUMP_EVERY_N_CALLS   30UL
 
 NEH7100_DEV_DEFINE(neh7100, &hi2c2, 0x3C);
@@ -17,9 +17,6 @@ SHT3X_DEV_DEFINE(sht3x, &hi2c1, 0x44);
 
 static struct
 {
-  uint32_t last_fast_ms;
-  uint32_t last_slow_ms;
-
   uint16_t v_min_mv;
   uint16_t v_max_mv;
   uint32_t v_sum_mv;
@@ -30,25 +27,28 @@ static struct
   uint32_t c_sum_na;
   uint32_t c_count;
 
-  int16_t t_min_cd;
-  int16_t t_max_cd;
-  int32_t t_sum_cd;
+  int16_t t_sum_cd;
   uint32_t t_count;
 
-  uint16_t h_min_p;
-  uint16_t h_max_p;
   uint32_t h_sum_p;
   uint32_t h_count;
 
-  int16_t m_min_cd;
-  int16_t m_max_cd;
   int32_t m_sum_cd;
   uint32_t m_count;
 } agg;
 
+static uint32_t last_fast_ms;
+static uint32_t last_sht3x_ms;
+
 static uint32_t now_ms(void)
 {
   return SysTimeToMs(SysTimeGetMcuTime());
+}
+
+static bool agg_complete(void)
+{
+  return (agg.v_count != 0) && (agg.c_count != 0) && (agg.t_count != 0) &&
+         (agg.h_count != 0) && (agg.m_count != 0);
 }
 
 static void sample_fast(void)
@@ -72,7 +72,7 @@ static void sample_fast(void)
   agg.v_sum_mv += v;
   agg.v_count++;
 
-  if (device_read(&neh7100, &n) == 0)
+  if (neh7100_read(&neh7100, &n) == 0)
   {
     if (agg.c_count == 0)
     {
@@ -92,73 +92,29 @@ static void sample_fast(void)
   }
 }
 
-static void sample_slow(void)
+static void sample_sht3x(void)
 {
   struct sht3x_sample s;
-  int16_t mcu_cd;
 
-  if (device_read(&sht3x, &s) == 0)
+  if (sht3x_read(&sht3x, &s) == 0)
   {
-    if (agg.t_count == 0)
-    {
-      agg.t_min_cd = s.temp_cd;
-      agg.t_max_cd = s.temp_cd;
-    }
-    else if (s.temp_cd < agg.t_min_cd)
-    {
-      agg.t_min_cd = s.temp_cd;
-    }
-    else if (s.temp_cd > agg.t_max_cd)
-    {
-      agg.t_max_cd = s.temp_cd;
-    }
     agg.t_sum_cd += s.temp_cd;
     agg.t_count++;
-
-    if (agg.h_count == 0)
-    {
-      agg.h_min_p = s.hum_permille;
-      agg.h_max_p = s.hum_permille;
-    }
-    else if (s.hum_permille < agg.h_min_p)
-    {
-      agg.h_min_p = s.hum_permille;
-    }
-    else if (s.hum_permille > agg.h_max_p)
-    {
-      agg.h_max_p = s.hum_permille;
-    }
     agg.h_sum_p += s.hum_permille;
     agg.h_count++;
   }
 
-  mcu_cd = (int16_t)((sys_get_temperature_level() * 10) / 256);
-  if (agg.m_count == 0)
-  {
-    agg.m_min_cd = mcu_cd;
-    agg.m_max_cd = mcu_cd;
-  }
-  else if (mcu_cd < agg.m_min_cd)
-  {
-    agg.m_min_cd = mcu_cd;
-  }
-  else if (mcu_cd > agg.m_max_cd)
-  {
-    agg.m_max_cd = mcu_cd;
-  }
-  agg.m_sum_cd += mcu_cd;
+  agg.m_sum_cd += (int16_t)((sys_get_temperature_level() * 10) / 256);
   agg.m_count++;
 }
 
 void telemetry_init(void)
 {
   memset(&agg, 0, sizeof(agg));
-
-  device_init(&neh7100);
-  device_init(&sht3x);
-
-  agg.last_fast_ms = now_ms();
-  agg.last_slow_ms = agg.last_fast_ms;
+  neh7100_init(&neh7100);
+  sht3x_init(&sht3x);
+  last_fast_ms = now_ms();
+  last_sht3x_ms = last_fast_ms;
 }
 
 void telemetry_process(void)
@@ -166,16 +122,16 @@ void telemetry_process(void)
   uint32_t now = now_ms();
   static uint32_t dump_call_cnt = 0;
 
-  if ((uint32_t)(now - agg.last_fast_ms) >= FAST_PERIOD_MS)
+  if ((uint32_t)(now - last_fast_ms) >= FAST_PERIOD_MS)
   {
     sample_fast();
-    agg.last_fast_ms = now;
+    last_fast_ms = now;
   }
 
-  if ((uint32_t)(now - agg.last_slow_ms) >= SLOW_PERIOD_MS)
+  if ((uint32_t)(now - last_sht3x_ms) >= SHT3X_PERIOD_MS)
   {
-    sample_slow();
-    agg.last_slow_ms = now;
+    sample_sht3x();
+    last_sht3x_ms = now;
   }
 
   if (++dump_call_cnt >= DUMP_EVERY_N_CALLS)
@@ -192,7 +148,7 @@ void telemetry_dump(void)
   uint16_t vbat = sys_get_battery_level();
   int16_t mcu_cd = (int16_t)((sys_get_temperature_level() * 10) / 256);
 
-  if (device_read(&neh7100, &n) == 0)
+  if (neh7100_read(&neh7100, &n) == 0)
   {
     printf("dump: cur %lu nA (range %u)\r\n", (unsigned long)n.current_na, n.range);
   }
@@ -201,7 +157,7 @@ void telemetry_dump(void)
     printf("dump: cur FAIL\r\n");
   }
 
-  if (device_read(&sht3x, &s) == 0)
+  if (sht3x_read(&sht3x, &s) == 0)
   {
     printf("dump: temp %d.%d C  hum %u.%u %%\r\n",
            s.temp_cd / 10, abs(s.temp_cd % 10),
@@ -218,8 +174,8 @@ void telemetry_dump(void)
 uint32_t telemetry_sleep_cap_ms(void)
 {
   uint32_t now = now_ms();
-  uint32_t fast_elapsed = (uint32_t)(now - agg.last_fast_ms);
-  uint32_t slow_elapsed = (uint32_t)(now - agg.last_slow_ms);
+  uint32_t fast_elapsed = (uint32_t)(now - last_fast_ms);
+  uint32_t sht3x_elapsed = (uint32_t)(now - last_sht3x_ms);
   uint32_t cap;
 
   if (fast_elapsed >= FAST_PERIOD_MS)
@@ -228,78 +184,82 @@ uint32_t telemetry_sleep_cap_ms(void)
   }
   cap = FAST_PERIOD_MS - fast_elapsed;
 
-  if (slow_elapsed >= SLOW_PERIOD_MS)
+  if (sht3x_elapsed >= SHT3X_PERIOD_MS)
   {
     return 0;
   }
-  if ((SLOW_PERIOD_MS - slow_elapsed) < cap)
+  if ((SHT3X_PERIOD_MS - sht3x_elapsed) < cap)
   {
-    cap = SLOW_PERIOD_MS - slow_elapsed;
+    cap = SHT3X_PERIOD_MS - sht3x_elapsed;
   }
 
   return cap;
 }
 
-void telemetry_collect(telemetry_data_t *telemetry)
+static void agg_to_telemetry(telemetry_data_t *telemetry)
 {
-  uint32_t now;
-
-  if (telemetry == NULL)
-  {
-    return;
-  }
-
   telemetry->current_min_ua = (uint16_t)(agg.c_min_na / 1000UL);
-  telemetry->current_avg_ua = (uint16_t)((agg.c_count != 0) ? (agg.c_sum_na / agg.c_count / 1000UL) : 0);
+  telemetry->current_avg_ua = (uint16_t)(agg.c_sum_na / agg.c_count / 1000UL);
   telemetry->current_max_ua = (uint16_t)(agg.c_max_na / 1000UL);
 
-  telemetry->voltage_avg_mv = (uint16_t)((agg.v_count != 0) ? (agg.v_sum_mv / agg.v_count) : 0);
+  telemetry->voltage_min_mv = agg.v_min_mv;
+  telemetry->voltage_avg_mv = (uint16_t)(agg.v_sum_mv / agg.v_count);
+  telemetry->voltage_max_mv = agg.v_max_mv;
 
-  telemetry->temperature_min = agg.t_min_cd;
-  telemetry->temperature_avg = (int16_t)((agg.t_count != 0) ? (agg.t_sum_cd / (int32_t)agg.t_count) : 0);
-  telemetry->temperature_max = agg.t_max_cd;
+  telemetry->temperature_avg = (int16_t)(agg.t_sum_cd / (int32_t)agg.t_count);
+  telemetry->humidity_avg = (uint16_t)(agg.h_sum_p / agg.h_count);
+  telemetry->mcu_temperature = (int16_t)(agg.m_sum_cd / (int32_t)agg.m_count);
+}
 
-  telemetry->humidity_min = agg.h_min_p;
-  telemetry->humidity_avg = (uint16_t)((agg.h_count != 0) ? (agg.h_sum_p / agg.h_count) : 0);
-  telemetry->humidity_max = agg.h_max_p;
+bool telemetry_collect(telemetry_data_t *telemetry)
+{
+  if ((telemetry == NULL) || !agg_complete())
+  {
+    return false;
+  }
 
-  telemetry->mcu_temperature = (int16_t)((agg.m_count != 0) ? (agg.m_sum_cd / (int32_t)agg.m_count) : 0);
-
-  now = now_ms();
+  agg_to_telemetry(telemetry);
   memset(&agg, 0, sizeof(agg));
-  agg.last_fast_ms = now;
-  agg.last_slow_ms = now;
+  return true;
+}
+
+static void put_bits(uint8_t *buffer, uint32_t value, uint8_t nbits, uint32_t *bitpos)
+{
+  while (nbits > 0)
+  {
+    uint8_t byte_index = (uint8_t)(*bitpos >> 3);
+    uint8_t bit_index  = (uint8_t)(*bitpos & 0x07U);
+    uint8_t room = 8U - bit_index;
+    uint8_t take = (nbits < room) ? nbits : room;
+    uint8_t shift = nbits - take;
+
+    buffer[byte_index] |= (uint8_t)(((value >> shift) & ((1U << take) - 1U)) << (room - take));
+
+    *bitpos += take;
+    nbits -= take;
+  }
 }
 
 uint8_t telemetry_encode(const telemetry_data_t *telemetry, uint8_t *buffer)
 {
+  uint32_t bitpos = 0;
+
   if ((telemetry == NULL) || (buffer == NULL))
   {
     return 0;
   }
 
-  buffer[0]  = (uint8_t)(telemetry->current_min_ua >> 8);
-  buffer[1]  = (uint8_t)(telemetry->current_min_ua);
-  buffer[2]  = (uint8_t)(telemetry->current_avg_ua >> 8);
-  buffer[3]  = (uint8_t)(telemetry->current_avg_ua);
-  buffer[4]  = (uint8_t)(telemetry->current_max_ua >> 8);
-  buffer[5]  = (uint8_t)(telemetry->current_max_ua);
-  buffer[6]  = (uint8_t)(telemetry->voltage_avg_mv >> 8);
-  buffer[7]  = (uint8_t)(telemetry->voltage_avg_mv);
-  buffer[8]  = (uint8_t)((uint16_t)telemetry->temperature_min >> 8);
-  buffer[9]  = (uint8_t)(telemetry->temperature_min);
-  buffer[10] = (uint8_t)((uint16_t)telemetry->temperature_avg >> 8);
-  buffer[11] = (uint8_t)(telemetry->temperature_avg);
-  buffer[12] = (uint8_t)((uint16_t)telemetry->temperature_max >> 8);
-  buffer[13] = (uint8_t)(telemetry->temperature_max);
-  buffer[14] = (uint8_t)(telemetry->humidity_min >> 8);
-  buffer[15] = (uint8_t)(telemetry->humidity_min);
-  buffer[16] = (uint8_t)(telemetry->humidity_avg >> 8);
-  buffer[17] = (uint8_t)(telemetry->humidity_avg);
-  buffer[18] = (uint8_t)(telemetry->humidity_max >> 8);
-  buffer[19] = (uint8_t)(telemetry->humidity_max);
-  buffer[20] = (uint8_t)((uint16_t)telemetry->mcu_temperature >> 8);
-  buffer[21] = (uint8_t)(telemetry->mcu_temperature);
+  memset(buffer, 0, TELEMETRY_PAYLOAD_SIZE);
+
+  put_bits(buffer, telemetry->current_min_ua & 0x7FFFu, 15, &bitpos);
+  put_bits(buffer, telemetry->current_avg_ua & 0x7FFFu, 15, &bitpos);
+  put_bits(buffer, telemetry->current_max_ua & 0x7FFFu, 15, &bitpos);
+  put_bits(buffer, telemetry->voltage_min_mv & 0x1FFFu, 13, &bitpos);
+  put_bits(buffer, telemetry->voltage_avg_mv & 0x1FFFu, 13, &bitpos);
+  put_bits(buffer, telemetry->voltage_max_mv & 0x1FFFu, 13, &bitpos);
+  put_bits(buffer, (uint16_t)telemetry->temperature_avg & 0x0FFFu, 12, &bitpos);
+  put_bits(buffer, telemetry->humidity_avg & 0x03FFu, 10, &bitpos);
+  put_bits(buffer, (uint16_t)telemetry->mcu_temperature & 0x0FFFu, 12, &bitpos);
 
   return TELEMETRY_PAYLOAD_SIZE;
 }

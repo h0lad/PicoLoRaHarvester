@@ -80,7 +80,7 @@ extern "C" {
 #define FREQMAX_EU_868                      (870000000)     // Hz
 #define RX2_FREQ_EU_868                     (869525000)     // Hz
 #define FREQUENCY_FACTOR_EU_868             (100)           // MHz/100 when coded over 24 bits
-#define RX2DR_INIT_EU_868                   (3)
+#define RX2DR_INIT_EU_868                   (0)
 #define SYNC_WORD_PRIVATE_EU_868            (0x12)
 #define SYNC_WORD_PUBLIC_EU_868             (0x34)
 #define MIN_TX_DR_EU_868                    (0)

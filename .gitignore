@@ -29,6 +29,7 @@ fp-info-cache
 
 # Local credentials (secrets) - never commit
 src/LoRaWAN/App/se-identity-local.h
+src/tools/secrets.env
 
 # Build output
 build/

@@ -1,5 +1,3 @@
-!! Warning !! Untested layout yet.
-
 ![MeshtasticRouterNode](doc/PicoLoRaHarvester.png)
 
 # PicoLoRaHarvester
