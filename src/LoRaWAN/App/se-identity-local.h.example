@@ -1,0 +1,6 @@
+/* Copy this file to se-identity-local.h and fill in the real credentials.
+ * se-identity-local.h is gitignored and never committed. */
+#define LORAWAN_DEVICE_EUI                                 00,00,00,00,00,00,00,00
+#define LORAWAN_JOIN_EUI                                  00,00,00,00,00,00,00,00
+#define LORAWAN_GEN_APP_KEY                               00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+#define LORAWAN_APP_KEY                                   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00

@@ -27,4 +27,15 @@ fp-info-cache
 *.xml
 *.csv
 
+# Local credentials (secrets) - never commit
+src/LoRaWAN/App/se-identity-local.h
+
+# Build output
+build/
+
+# PCB artifacts
+pcb/.history/
+*.zip
+*.lck
+
 # End of https://mrkandreev.name/snippets/gitignore-generator/#KiCad
