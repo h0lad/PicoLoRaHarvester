@@ -87,31 +87,11 @@ Both I²C buses have on-board 10 kΩ pull-up resistors (R4/R10 for I2C1, R2/R9 f
 | ADC_LIPO | R13 (390 kΩ) / R14 (1 MΩ) + C15 (100 nF) | ~0.72 | PB4 / A1 |
 
 
-## Power Architecture
-
-```
-Solar Panel (J2) ── VBUS ── NEH7100 VIN (charge pump + MPPT)
-USB 5V   (J3)   ── VUSB ── NEH7100 USB (bypass, 200 mA max)
-LiPo     (J4)   ── VLIPO ── NEH7100 VBAT / VBATOK
-                              │
-                              ├─ Internal 4-stage charge pump
-                              ├─ CSTORE bulk capacitor (47 μF, C10)
-                              ├─ BLOAD load switch
-                              └─ VLDO ──┐
-                                        ├─ JP1 ── +3V0 rail (regulated 3.0 V)
-                                        └─ TPS63900 (U3) VIN ── VOUT ──┘
-                                              │
-                                              ├─ RAK3172 VDD
-                                              ├─ I2C pull-ups
-                                              └─ J5 pin 2 (+3V0 output)
-```
-
-
 ## FAQ
 
 #### How much current can I expect from the NEH7100?
 
-The NEH7100 has an input power range of 15 μW to 100 mW and efficiency up to 95% (per [datasheet](https://assets.nexperia.com/documents/data-sheet/NEH7100.pdf)). At the 3.0 V LDO output this translates to an absolute maximum of ~31 mA from harvested energy.
+The NEH7100 has an input power range of 15 μW to 100 mW and efficiency up to 95% (per [datasheet](https://assets.nexperia.com/documents/data-sheet/NEH7100.pdf)).
 
 The USB input (VUSB on J3 pin 2) bypasses the charge pump and can supply up to 200 mA directly for bench use or supplemental charging.
 
